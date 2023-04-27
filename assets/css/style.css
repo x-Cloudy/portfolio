@@ -1,6 +1,23 @@
 @keyframes animacao {
-    from {border-bottom: 0px solid var(--white-color); width: 0%;}
-    to {border-bottom: 1px solid var(--white-color); width: 100%;}
+    from {
+        border-bottom: 0px solid var(--white-color);
+        width: 0%;
+    }
+
+    to {
+        border-bottom: 1px solid var(--white-color);
+        width: 100%;
+    }
+}
+
+@keyframes ani-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @font-face {
@@ -12,8 +29,10 @@
 
 @font-face {
     font-family: 'Neue-Montreal';
-    src: url('PPNeueMontreal-Thin.otf') format('opentype'); 
+    src: url('PPNeueMontreal-Thin.otf') format('opentype');
 }
+
+
 
 :root {
     --white-color: rgb(233, 230, 230);
@@ -33,80 +52,90 @@ body {
     background-color: var(--black-color);
     font-family: 'Neue Montreal', sans-serif;
     color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     -webkit-user-select: none;
     user-select: none;
 }
-
 
 header {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    transform: translate(9vh, -600px);
+    top: 0;
+    margin-top: 250px;
+    margin-left: 80px;
     color: var(--white-color);
     -webkit-user-select: none;
     user-select: none;
-}
-
-main {
-    position: absolute;
-    top: 0;
-    font-family: 'Neue-Montreal';
-    color: var(--white-color);
-    font-size-adjust: 0.5;
-    font-size: 4vw;
-    transform: translate(260px, 80px);
+    position: fixed;
 }
 
 aside {
     background-color: rgba(0, 0, 0, 0.2);
-    border: .1px solid var(--grey-color);
-    color: var(--white-color);
+    border: 1px solid rgba(211, 210, 210, 0.3);
+    color: rgba(235, 235, 235, 1);
     position: fixed;
     right: 0;
-    transform: translate(-9vw, -510px);
+    transform: translate(-9vw, -510px) skew(0deg, 0deg);
     height: 25vw;
-    width: 17vw;
-    min-width: 200px;
-    max-width: 300px;
+    width: 200px;
     min-height: 400px;
     max-height: 400px;
-    font-family: 'Neue Montreal';
+    font-family: 'Neue-Montreal';
     padding: 5px;
-    padding-right: 90px;
     text-align: start;
     letter-spacing: 1px;
     backdrop-filter: blur(2px);
+    display: none;
 }
 
-.btn-menu {
-    background-color:rgba(29, 29, 29, 0.1);
+.asideShow {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(211, 210, 210, 0.3);
+    color: rgba(235, 235, 235, 1);
+    position: fixed;
+    right: 0;
+    transform: translate(-9vw, -510px) skew(0deg, 0deg);
+    height: 25vw;
+    width: 200px;
+    min-height: 400px;
+    max-height: 400px;
+    font-family: 'Neue-Montreal';
+    padding: 5px;
+    text-align: start;
+    letter-spacing: 1px;
+    backdrop-filter: blur(2px);
+    display: block;
+    animation-name: ani-opacity;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+
+
+header button {
+    background-color: rgba(29, 29, 29, 0.1);
     color: var(--white-color);
     border: none;
     font-family: 'Neue Montreal';
     font-size: 15px;
     line-height: 1.7;
-    margin-top: 2vh;
+    margin-top: 17px;
     position: relative;
     transform: translate(27px, 10px);
     text-align: start;
     cursor: pointer;
 }
 
-.btn-menu:hover {
+header button:hover {
     color: var(--grey-color);
     transition-duration: .4s;
 }
 
-.btn-menu:focus, .btn-menu:active {
-   animation-name: animacao;
-   animation-duration: 1s;
-   animation-fill-mode: forwards;
-   text-align: start;
-   animation-iteration-count: 1;
+header button:focus,
+header button:active {
+    animation-name: animacao;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    text-align: start;
+    animation-iteration-count: 1;
 }
 
 #btn-language {
@@ -131,9 +160,17 @@ aside {
     color: var(--white-color);
 }
 
+#nome-text {
+    position: absolute;
+    top: 0;
+    font-family: 'Neue-Montreal';
+    color: var(--white-color);
+    font-size: 50px;
+    transform: translate(260px, 80px);
+}
 
 #small-text {
-    font-size: 1.5vw;
+    font-size: 23px;
     font-style: italic;
     color: rgba(233, 230, 230, 0.8);
 }
@@ -141,20 +178,29 @@ aside {
 #conteudo-centro {
     background-color: var(--black-color);
     width: 90vw;
-    height: 840px;
-    margin: 4vh 5vh 5vh 7vh;
+    height: 89.80vh;
+    margin: 40px;
     border: 1px solid var(--grey-color);
-    z-index: 0;
+    z-index: 1;
+}
+
+#bar {
+    position: fixed;
+    margin: 10px 0px 50px 50px;
+    height: 90vh;
+    width: 80px;
+    z-index: 2;
+
 }
 
 #barra-esquerda {
     border: 1px solid var(--grey-color);
     width: 60px;
-    height: 835px;
-    transform: translate(13px, -810px);
-    position: absolute;
+    margin-top: 20px;
+    height: 89.49vh;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 0;
     backdrop-filter: blur(2px);
 }
 
@@ -162,8 +208,7 @@ aside {
     border: 1px solid var(--grey-color);
     width: 73px;
     height: 73px;
-    transform: translate(13px, -830px);
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
     backdrop-filter: blur(1px);
@@ -183,20 +228,50 @@ aside {
     transform: translate(64px, -2px) rotate(32deg);
     height: 24px;
     filter: blur(1px);
-    
+
 }
 
 #linha-diagonal2 {
     border-right: 1px solid var(--grey-color);
     position: fixed;
-    transform: translate(64px, 69px) rotate(45deg);
-    height: 18px;
+    transform: translate(64px, 69px) rotate(48deg);
+    height: 17px;
 }
 
 #particles-js {
     display: flex;
     position: relative;
-    height: 839px;
+    height: 89.60vh;
     width: 100%;
 }
 
+@supports (display: flex) {
+    @media(max-width: 670px) {
+        #conteudo-centro {
+            margin: 0;
+            position: fixed;
+        }
+
+        #js-lateral {
+            transform: translate(-55px, 780px) rotate(-90deg);
+        }
+
+        #btn-language {
+            position: relative;
+            transform: translate(100px, 860px);
+        }
+
+        #nome-text {
+            font-size: 30px;
+        }
+
+        #small-text {
+            font-size: 15px;
+        }
+
+        #bar {
+            transform: translate(-40px, 0px);
+        }
+
+    }
+}
