@@ -144,11 +144,11 @@ header button:active {
     color: var(--white-color);
     font-family: 'Neue Montreal';
     font-style: italic;
-    transform: translate(180px, 880px);
-    position: fixed;
+    position: absolute;
     font-size: medium;
     max-width: fit-content;
     cursor: pointer;
+    margin: 93vh 0px 30px 150px;
 }
 
 #btn-language:hover {
@@ -177,27 +177,26 @@ header button:active {
 
 #conteudo-centro {
     background-color: var(--black-color);
-    width: 90vw;
-    height: 89.80vh;
-    margin: 40px;
+    width: 93vw;
+    height: 92.80vh;
+    margin: 30px;
     border: 1px solid var(--grey-color);
     z-index: 1;
 }
 
 #bar {
     position: fixed;
-    margin: 10px 0px 50px 50px;
+    margin: 10px 0px 50px 43px;
     height: 90vh;
     width: 80px;
     z-index: 2;
-
 }
 
 #barra-esquerda {
     border: 1px solid var(--grey-color);
     width: 60px;
     margin-top: 20px;
-    height: 89.49vh;
+    height: 91.59vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 0;
@@ -217,8 +216,9 @@ header button:active {
 #js-lateral {
     position: absolute;
     font-style: italic;
-    transform: translate(-20px, 780px) rotate(-90deg);
+    transform:rotate(-90deg);
     color: var(--white-color);
+    margin: 79vh 0 0 -53px;
 
 }
 
@@ -228,41 +228,73 @@ header button:active {
     transform: translate(64px, -2px) rotate(32deg);
     height: 24px;
     filter: blur(1px);
-
 }
 
 #linha-diagonal2 {
     border-right: 1px solid var(--grey-color);
     position: fixed;
-    transform: translate(64px, 69px) rotate(48deg);
-    height: 17px;
+    transform: translate(65px, 69px) rotate(44deg);
+    height: 19px;
 }
 
 #particles-js {
     display: flex;
     position: relative;
-    height: 89.60vh;
+    height: 92.70vh;
     width: 100%;
 }
 
 @supports (display: flex) {
     @media(max-width: 670px) {
+        header {
+            margin-left: 40px;
+        }
+        
         #conteudo-centro {
             margin: 0;
+            height: 95.70vh;
+        }
+        
+        #linha-diagonal1 {
+            border-right: 1px solid rgba(233, 230, 230, 0.3);
             position: fixed;
+            transform: translate(43px, -2px) rotate(32deg);
+            height: 16px;
+            filter: blur(1px);
         }
 
+        #linha-diagonal2 {
+            border-right: 1px solid var(--grey-color);
+            position: fixed;
+            transform: translate(43px, 47px) rotate(44deg);
+            height: 13px;
+        }
+        
+        #barra-esquerda {
+            height: 94.20vh;
+            width: 40px;
+            margin-top: 14px;
+        }
+
+        #quadrado-barra {
+            width: 50px;
+            height: 50px;
+        }
+        
         #js-lateral {
-            transform: translate(-55px, 780px) rotate(-90deg);
+            transform:rotate(-90deg) translate(0px, 8vw);
+            display: none;
         }
 
         #btn-language {
-            position: relative;
-            transform: translate(100px, 860px);
+            margin-left:  90px;
+            margin-top: 95.70vh;
         }
 
         #nome-text {
             font-size: 30px;
+            transform: translate(45vw, 80px);
+            margin-right: 5vh;
         }
 
         #small-text {
@@ -273,5 +305,6 @@ header button:active {
             transform: translate(-40px, 0px);
         }
 
+        
     }
 }
