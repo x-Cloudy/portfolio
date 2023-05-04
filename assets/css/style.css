@@ -87,15 +87,6 @@ aside {
 
 }
 
-.asideShow {
-    display: block;
-    animation-name: ani-opacity;
-    animation-duration: .4s;
-    animation-fill-mode: forwards;
-    scale: .90;
-}
-
-
 header button {
     background-color: rgba(29, 29, 29, 0.1);
     color: var(--white-color);
@@ -122,6 +113,25 @@ header button:active {
     animation-fill-mode: forwards;
     text-align: start;
     animation-iteration-count: 1;
+}
+
+label {
+    position: fixed;
+    color: var(--white-color);
+    backdrop-filter: blur(10px);
+    font-family: "Neue-Montreal";
+    width: 250px;
+    transform: translate(300px, 15px);
+    z-index: 4;
+}
+
+
+.asideShow {
+    display: block;
+    animation-name: ani-opacity;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    scale: .90;
 }
 
 #btn-language {
@@ -153,6 +163,7 @@ header button:active {
     color: var(--white-color);
     font-size: 45px;
     transform: translate(260px, 80px);
+    transition: opacity .5s;
 }
 
 #small-text {
@@ -192,15 +203,42 @@ header button:active {
 
 .barra-esquerdaClicked {
     border: 1px solid var(--grey-color);
-    width: 20%;
+    width: 50vw;
+    max-width: 700px;
     margin-top: 20px;
     height: 91.59vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 0;
     backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: end;
+    padding: 80px 20px 30px 200px;
 }
 
+
+.menu-project {
+    position: fixed;
+    width: 250px;
+    opacity: 0;
+    list-style: none;
+    margin-top: -40px;
+    overflow-x: auto;
+}
+
+.menu-project::-webkit-scrollbar {
+    display: none;
+}
+
+.img-project {
+    position: relative;
+    height: 120px;
+    width: 250px;
+    float: right;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 3; 
+    margin: 20px 0px 40px 0; 
+}
 
 .quadrado-barra {
     border: 1px solid var(--grey-color);
@@ -216,18 +254,17 @@ header button:active {
 .quadrado-barraClicked {
     border: 1px solid var(--grey-color);
     width: 68px;
-    height: 15px;
+    height: 15px !important;
     position: fixed;
     background-color: rgba(0, 0, 0, 0);
     z-index: 1;
-   
     transform: translate(0px, 0px);
 }
 
 #js-lateral {
     position: absolute;
     font-style: italic;
-    transform:rotate(-90deg);
+    transform: rotate(-90deg);
     color: var(--white-color);
     margin: 79vh 0 0 -53px;
 
@@ -258,16 +295,20 @@ header button:active {
 }
 
 @supports (display: flex) {
-    @media(max-width: 670px) {
+    @media(max-width: 800px) {
         header {
             margin-left: 40px;
         }
-        
+
+        label {
+            display: none;
+        }
+
         #conteudo-centro {
             margin: 0;
             height: 95.70vh;
         }
-        
+
         #linha-diagonal1 {
             border-right: 1px solid rgba(233, 230, 230, 0.3);
             position: fixed;
@@ -282,7 +323,7 @@ header button:active {
             transform: translate(43px, 47px) rotate(44deg);
             height: 13px;
         }
-        
+
         .barra-esquerda {
             height: 94.20vh;
             width: 40px;
@@ -293,14 +334,14 @@ header button:active {
             width: 50px;
             height: 50px;
         }
-        
+
         #js-lateral {
-            transform:rotate(-90deg) translate(0px, 8vw);
+            transform: rotate(-90deg) translate(0px, 8vw);
             display: none;
         }
 
         #btn-language {
-            margin-left:  90px;
+            margin-left: 90px;
             margin-top: 95.70vh;
         }
 
@@ -317,10 +358,25 @@ header button:active {
         #bar {
             transform: translate(-40px, 0px);
         }
-        
+
         .asideShow {
             scale: 0.8;
         }
-    
+
+        .menu-project {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+
+        }
+
+        .barra-esquerdaClicked {
+            width: 82vw;
+        }
+
+        .img-project {
+            scale: .8;
+        }
     }
+
 }
