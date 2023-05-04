@@ -38,8 +38,6 @@
     --white-color: rgb(233, 230, 230);
     --black-color: rgb(34, 34, 34);
     --grey-color: rgba(255, 255, 255, 0.5);
-    --primary-color: rgb(17, 86, 102);
-    --primary-color-darker: rgb(9, 48, 56);
 }
 
 * {
@@ -66,12 +64,12 @@ header {
     -webkit-user-select: none;
     user-select: none;
     position: fixed;
+    transition: transform .8s;
+    z-index: 3;
 }
 
 aside {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(211, 210, 210, 0.3);
-    color: rgba(235, 235, 235, 1);
+    color: white;
     position: fixed;
     right: 0;
     transform: translate(-9vw, -510px) skew(0deg, 0deg);
@@ -79,34 +77,22 @@ aside {
     width: 200px;
     min-height: 400px;
     max-height: 400px;
-    font-family: 'Neue-Montreal';
-    padding: 5px;
+    font-family: 'Neue Montreal';
+    padding: 5px 70px 5px 5px;
     text-align: start;
     letter-spacing: 1px;
     backdrop-filter: blur(2px);
     display: none;
+    border-left: 1px solid var(--white-color);
+
 }
 
 .asideShow {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(211, 210, 210, 0.3);
-    color: rgba(235, 235, 235, 1);
-    position: fixed;
-    right: 0;
-    transform: translate(-9vw, -510px) skew(0deg, 0deg);
-    height: 25vw;
-    width: 200px;
-    min-height: 400px;
-    max-height: 400px;
-    font-family: 'Neue-Montreal';
-    padding: 5px;
-    text-align: start;
-    letter-spacing: 1px;
-    backdrop-filter: blur(2px);
     display: block;
     animation-name: ani-opacity;
     animation-duration: .4s;
     animation-fill-mode: forwards;
+    scale: .90;
 }
 
 
@@ -165,7 +151,7 @@ header button:active {
     top: 0;
     font-family: 'Neue-Montreal';
     color: var(--white-color);
-    font-size: 50px;
+    font-size: 45px;
     transform: translate(260px, 80px);
 }
 
@@ -192,9 +178,21 @@ header button:active {
     z-index: 2;
 }
 
-#barra-esquerda {
+.barra-esquerda {
     border: 1px solid var(--grey-color);
-    width: 60px;
+    width: 55px;
+    margin-top: 20px;
+    height: 91.59vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    transition: .8s ease-in-out;
+    z-index: 0;
+}
+
+.barra-esquerdaClicked {
+    border: 1px solid var(--grey-color);
+    width: 20%;
     margin-top: 20px;
     height: 91.59vh;
     position: fixed;
@@ -203,14 +201,27 @@ header button:active {
     backdrop-filter: blur(2px);
 }
 
-#quadrado-barra {
+
+.quadrado-barra {
     border: 1px solid var(--grey-color);
-    width: 73px;
-    height: 73px;
+    width: 68px;
+    height: 68px;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
     backdrop-filter: blur(1px);
+    transition: .8s ease-in-out;
+}
+
+.quadrado-barraClicked {
+    border: 1px solid var(--grey-color);
+    width: 68px;
+    height: 15px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+   
+    transform: translate(0px, 0px);
 }
 
 #js-lateral {
@@ -225,16 +236,18 @@ header button:active {
 #linha-diagonal1 {
     border-right: 1px solid rgba(233, 230, 230, 0.3);
     position: fixed;
-    transform: translate(64px, -2px) rotate(32deg);
-    height: 24px;
+    transform: translate(59px, 0px) rotate(32deg);
+    height: 21px;
     filter: blur(1px);
+    transition: opacity .2s ease-in-out;
 }
 
 #linha-diagonal2 {
     border-right: 1px solid var(--grey-color);
     position: fixed;
-    transform: translate(65px, 69px) rotate(44deg);
+    transform: translate(59px, 64px) rotate(44deg);
     height: 19px;
+    transition: opacity .2s ease-in-out;
 }
 
 #particles-js {
@@ -270,13 +283,13 @@ header button:active {
             height: 13px;
         }
         
-        #barra-esquerda {
+        .barra-esquerda {
             height: 94.20vh;
             width: 40px;
             margin-top: 14px;
         }
 
-        #quadrado-barra {
+        .quadrado-barra {
             width: 50px;
             height: 50px;
         }
