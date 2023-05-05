@@ -36,7 +36,7 @@
 
 :root {
     --white-color: rgb(233, 230, 230);
-    --black-color: rgb(34, 34, 34);
+    --black-color: rgb(25, 25, 30);
     --grey-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -99,6 +99,7 @@ header button {
     transform: translate(27px, 10px);
     text-align: start;
     cursor: pointer;
+    transition: .4s;
 }
 
 header button:hover {
@@ -125,6 +126,94 @@ label {
     z-index: 4;
 }
 
+.info {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.infoClicked {
+    position: fixed;
+    display: flex;             
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px) ;
+    height: 600px;
+    width: 50vw;
+    top: 0;
+    right: 0;
+    margin: 20vh 13vw ;
+    padding: 40px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.info p {
+    font-family: "Neue-Montreal";
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    
+}
+
+.info .apresentacao {
+    width: 100px;
+    margin-left: 250px;
+}
+
+.info .biografia{
+    width: 130px;
+    margin-left: 100px;
+    overflow-x: auto;
+}
+
+.info .biografia::-webkit-scrollbar {
+    display: none;
+}
+
+.info label {
+    position: fixed;
+    transform: translate(-0px, 200px);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 60px;
+    left: 0;
+}
+
+.info label a{
+    text-decoration: none;
+    color: var(--white-color);
+    transition: .5s;
+    margin-top: 10px;
+    padding: 10px 20px 20px 20px;
+    font-family: "Neue-Montreal";
+    letter-spacing: 1px;
+}
+.info label a:hover{
+    color:rgb(90, 90, 90);
+    transition: .5s;
+}
+
+.info .email {
+    transition: .1s;
+    cursor: pointer;
+}
+
+.info img {
+    border: 1px solid var(--grey-color);
+    position: fixed;
+    left: 0;
+    margin-left: 60px;
+    filter: saturate(0%);
+    transition: filter 1s;
+}
+
+.info img:hover {
+    filter: saturate(100%);
+
+}
 
 .asideShow {
     display: block;
