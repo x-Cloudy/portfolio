@@ -206,7 +206,7 @@ label {
     position: fixed;
     left: 0;
     margin-left: 60px;
-    filter: saturate(0%);
+    filter: saturate(50%);
     transition: filter 1s;
 }
 
