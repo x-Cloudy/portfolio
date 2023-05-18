@@ -127,9 +127,10 @@ label {
 }
 
 .info {
-    display: none;
+    position: fixed;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    margin-top: 500px;
 }
 
 .infoClicked {
@@ -139,21 +140,18 @@ label {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(3px) ;
     height: 600px;
-    width: 50vw;
+    width: 650px;
     top: 0;
     right: 0;
     margin: 20vh 13vw ;
     padding: 40px;
     opacity: 1;
-    transition: opacity 1s ease-in-out;
 }
 
 .info p {
     font-family: "Neue-Montreal";
     font-size: 15px;
     letter-spacing: 1px;
-
-    
 }
 
 .info .apresentacao {
@@ -384,7 +382,7 @@ label {
 }
 
 @supports (display: flex) {
-    @media(max-width: 800px) {
+    @media(max-width: 900px) {
         header {
             margin-left: 40px;
         }
@@ -465,6 +463,26 @@ label {
 
         .img-project {
             scale: .8;
+        }
+        .infoClicked {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            overflow: auto;
+        }
+        .infoClicked::-webkit-scrollbar {
+            display: none;
+        }
+
+        .info .biografia {
+            position: absolute;
+            margin-top: 500px;
+            margin-left: 30px;
+            overflow: auto;
+        }
+
+        .info .biografia::-webkit-scrollbar {
+            display: none;
         }
     }
 
