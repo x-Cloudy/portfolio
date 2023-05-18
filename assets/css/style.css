@@ -129,7 +129,7 @@ label {
 .info {
     position: fixed;
     opacity: 0;
-    transition: opacity .5s ease-in-out;
+    transition: opacity .5git s ease-in-out;
     margin-top: 500px;
 }
 
