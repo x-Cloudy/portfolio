@@ -100,6 +100,7 @@ header button {
     text-align: start;
     cursor: pointer;
     transition: .4s;
+    width: 10px;
 }
 
 header button:hover {
@@ -116,15 +117,6 @@ header button:active {
     animation-iteration-count: 1;
 }
 
-label {
-    position: fixed;
-    color: var(--white-color);
-    backdrop-filter: blur(10px);
-    font-family: "Neue-Montreal";
-    width: 250px;
-    transform: translate(300px, 15px);
-    z-index: 4;
-}
 
 .info {
     position: fixed;
@@ -143,7 +135,7 @@ label {
     width: 650px;
     top: 0;
     right: 0;
-    margin: 20vh 13vw ;
+    margin: 20vh 5vw ;
     padding: 40px;
     opacity: 1;
 }
@@ -206,6 +198,7 @@ label {
     margin-left: 60px;
     filter: saturate(50%);
     transition: filter 1s;
+    scale: .9;
 }
 
 .info img:hover {
@@ -219,28 +212,6 @@ label {
     animation-duration: .4s;
     animation-fill-mode: forwards;
     scale: .90;
-}
-
-#btn-language {
-    border: none;
-    background-color: var(--black-color);
-    color: var(--white-color);
-    font-family: 'Neue Montreal';
-    font-style: italic;
-    position: absolute;
-    font-size: medium;
-    max-width: fit-content;
-    cursor: pointer;
-    margin: 93vh 0px 30px 150px;
-}
-
-#btn-language:hover {
-    color: var(--grey-color);
-    transition-duration: .4s;
-}
-
-#btn-language:active {
-    color: var(--white-color);
 }
 
 #nome-text {
@@ -261,7 +232,7 @@ label {
 
 #conteudo-centro {
     background-color: var(--black-color);
-    width: 93vw;
+    width: 95vw;
     height: 92.80vh;
     margin: 30px;
     border: 1px solid var(--grey-color);
@@ -290,8 +261,8 @@ label {
 
 .barra-esquerdaClicked {
     border: 1px solid var(--grey-color);
-    width: 50vw;
-    max-width: 700px;
+    width: 90vw;
+    max-width: 1300px;
     margin-top: 20px;
     height: 91.59vh;
     position: fixed;
@@ -306,11 +277,36 @@ label {
 
 .menu-project {
     position: fixed;
-    width: 250px;
+    width: 70vw;
+    max-width: 1000px;
+    height: 70vh;
     opacity: 0;
     list-style: none;
     margin-top: -40px;
+    padding: 20px;
     overflow-x: auto;
+}
+
+.item-project {
+    background-color: aqua;
+    height: 140px;
+    width: 550px;
+    display: flex;
+}
+
+label {
+    display: block;
+    position: relative;
+    color: var(--white-color);
+    backdrop-filter: blur(10px);
+    font-family: "Neue-Montreal";
+    width: 250px;
+    margin: 20px 0px 0px 30px;
+    z-index: 4;
+}
+
+label img {
+    filter: saturate(50%);
 }
 
 .menu-project::-webkit-scrollbar {
@@ -321,7 +317,6 @@ label {
     position: relative;
     height: 120px;
     width: 250px;
-    float: right;
     border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 3; 
     margin: 20px 0px 40px 0; 
@@ -387,13 +382,10 @@ label {
             margin-left: 40px;
         }
 
-        label {
-            display: none;
-        }
-
         #conteudo-centro {
             margin: 0;
             height: 95.70vh;
+            width: 99.5vw;
         }
 
         #linha-diagonal1 {
@@ -450,15 +442,12 @@ label {
             scale: 0.8;
         }
 
-        .menu-project {
-            width: 100%;
-            display: flex;
-            justify-content: end;
-
+        label {
+            margin-right: 10px !important;
         }
 
         .barra-esquerdaClicked {
-            width: 82vw;
+            width: 98vw;
         }
 
         .img-project {
@@ -469,6 +458,9 @@ label {
             flex-direction: column;
             width: 400px;
             overflow: auto;
+            scale: .9;
+            margin-right: 0;
+            padding: 10px;
         }
         .infoClicked::-webkit-scrollbar {
             display: none;
@@ -483,6 +475,43 @@ label {
 
         .info .biografia::-webkit-scrollbar {
             display: none;
+        }
+
+        .info img {
+            scale: .8;
+            margin-left: 10px;
+        }
+        .info label a{
+            text-decoration: none;
+            color: var(--white-color);
+            transition: .5s;
+            margin-top: 10px;
+            padding: 10px 20px 20px 20px;
+            font-family: "Neue-Montreal";
+            letter-spacing: 1px;
+        }
+
+        .info label {
+            margin-left: 20px;
+        }
+        .info .apresentacao {
+            width: 100px;
+            margin-left: 200px;
+        }
+    }
+    @media(max-width: 450px) {
+        .infoClicked {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            overflow: auto;
+            scale: .8;
+            margin-right: 0;
+            padding: 10px;
+        }
+        .info img {
+            scale: .8;
+            margin-left: 10px;
         }
     }
 
