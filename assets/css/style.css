@@ -22,14 +22,14 @@
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('PPNeueMontreal-Book.otf') format('opentype');
+    src: url('./fonts/PPNeueMontreal-Book.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Neue-Montreal';
-    src: url('PPNeueMontreal-Thin.otf') format('opentype');
+    src: url('./fonts/PPNeueMontreal-Thin.otf') format('opentype');
 }
 
 
