@@ -288,10 +288,10 @@ header button:active {
 }
 
 .item-project {
-    background-color: aqua;
     height: 140px;
     width: 550px;
     display: flex;
+    margin-bottom: 30px;
 }
 
 label {
