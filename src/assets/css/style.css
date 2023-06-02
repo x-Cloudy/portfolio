@@ -1,0 +1,519 @@
+@keyframes animacao {
+    from {
+        border-bottom: 0px solid var(--white-color);
+        width: 0%;
+    }
+
+    to {
+        border-bottom: 1px solid var(--white-color);
+        width: 100%;
+    }
+}
+
+@keyframes ani-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('./fonts/PPNeueMontreal-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue-Montreal';
+    src: url('./fonts/PPNeueMontreal-Thin.otf') format('opentype');
+}
+
+
+
+:root {
+    --white-color: rgb(233, 230, 230);
+    --black-color: rgb(25, 25, 30);
+    --grey-color: rgba(255, 255, 255, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--black-color);
+    font-family: 'Neue Montreal', sans-serif;
+    color: white;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    margin-top: 250px;
+    margin-left: 80px;
+    color: var(--white-color);
+    -webkit-user-select: none;
+    user-select: none;
+    position: fixed;
+    transition: transform .8s;
+    z-index: 3;
+}
+
+aside {
+    color: white;
+    position: fixed;
+    right: 0;
+    transform: translate(-9vw, -510px) skew(0deg, 0deg);
+    height: 25vw;
+    width: 200px;
+    min-height: 400px;
+    max-height: 400px;
+    font-family: 'Neue Montreal';
+    padding: 5px 70px 5px 5px;
+    text-align: start;
+    letter-spacing: 1px;
+    backdrop-filter: blur(2px);
+    display: none;
+    border-left: 1px solid var(--white-color);
+
+}
+
+header button {
+    background-color: rgba(29, 29, 29, 0.1);
+    color: var(--white-color);
+    border: none;
+    font-family: 'Neue Montreal';
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 17px;
+    position: relative;
+    transform: translate(27px, 10px);
+    text-align: start;
+    cursor: pointer;
+    transition: .4s;
+    width: 10px;
+}
+
+header button:hover {
+    color: var(--grey-color);
+    transition-duration: .4s;
+}
+
+header button:focus,
+header button:active {
+    animation-name: animacao;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    text-align: start;
+    animation-iteration-count: 1;
+}
+
+
+.info {
+    position: fixed;
+    opacity: 0;
+    transition: opacity .5git s ease-in-out;
+    margin-top: 500px;
+}
+
+.infoClicked {
+    position: fixed;
+    display: flex;             
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px) ;
+    height: 600px;
+    width: 650px;
+    top: 0;
+    right: 0;
+    margin: 20vh 5vw ;
+    padding: 40px;
+    opacity: 1;
+    z-index: 3;
+}
+
+.info p {
+    font-family: "Neue-Montreal";
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.info .apresentacao {
+    width: 100px;
+    margin-left: 250px;
+}
+
+.info .biografia{
+    width: 130px;
+    margin-left: 100px;
+    overflow-x: auto;
+}
+
+.info .biografia::-webkit-scrollbar {
+    display: none;
+}
+
+.info label {
+    position: fixed;
+    transform: translate(-0px, 200px);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 60px;
+    left: 0;
+}
+
+.info label a{
+    text-decoration: none;
+    color: var(--white-color);
+    transition: .5s;
+    margin-top: 10px;
+    padding: 10px 20px 20px 20px;
+    font-family: "Neue-Montreal";
+    letter-spacing: 1px;
+}
+.info label a:hover{
+    color:rgb(90, 90, 90);
+    transition: .5s;
+}
+
+.info .email {
+    transition: .1s;
+    cursor: pointer;
+}
+
+.info img {
+    border: 1px solid var(--grey-color);
+    position: fixed;
+    left: 0;
+    margin-left: 60px;
+    filter: saturate(50%);
+    transition: filter 1s;
+    scale: .9;
+}
+
+.info img:hover {
+    filter: saturate(100%);
+
+}
+
+.asideShow {
+    display: block;
+    animation-name: ani-opacity;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    scale: .90;
+}
+
+#nome-text {
+    position: absolute;
+    top: 0;
+    font-family: 'Neue-Montreal';
+    color: var(--white-color);
+    font-size: 45px;
+    transform: translate(260px, 80px);
+    transition: opacity .5s;
+}
+
+#small-text {
+    font-size: 23px;
+    font-style: italic;
+    color: rgba(233, 230, 230, 0.8);
+}
+
+#conteudo-centro {
+    background-color: var(--black-color);
+    width: 95vw;
+    height: 92.80vh;
+    margin: 30px;
+    border: 1px solid var(--grey-color);
+    z-index: 1;
+}
+
+#bar {
+    position: fixed;
+    margin: 10px 0px 50px 43px;
+    height: 90vh;
+    width: 80px;
+    z-index: 2;
+}
+
+.barra-esquerda {
+    border: 1px solid var(--grey-color);
+    width: 55px;
+    margin-top: 20px;
+    height: 91.59vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    transition: .8s ease-in-out;
+    z-index: 0;
+}
+
+.barra-esquerdaClicked {
+    border: 1px solid var(--grey-color);
+    width: 90vw;
+    max-width: 1300px;
+    margin-top: 20px;
+    height: 91.59vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: end;
+    padding: 80px 20px 30px 200px;
+}
+
+
+.menu-project {
+    position: fixed;
+    width: 70vw;
+    max-width: 1000px;
+    height: 70vh;
+    opacity: 0;
+    list-style: none;
+    margin-top: -40px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.item-project {
+    height: 140px;
+    width: 550px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    position: relative;
+    color: var(--white-color);
+    backdrop-filter: blur(10px);
+    font-family: "Neue-Montreal";
+    width: 250px;
+    margin: 20px 0px 0px 30px;
+    z-index: 4;
+}
+
+label img {
+    filter: saturate(50%);
+}
+
+.menu-project::-webkit-scrollbar {
+    display: none;
+}
+
+.img-project {
+    position: relative;
+    height: 120px;
+    width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 3; 
+    margin: 20px 0px 40px 0; 
+}
+
+.quadrado-barra {
+    border: 1px solid var(--grey-color);
+    width: 68px;
+    height: 68px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    backdrop-filter: blur(1px);
+    transition: .8s ease-in-out;
+}
+
+.quadrado-barraClicked {
+    border: 1px solid var(--grey-color);
+    width: 68px;
+    height: 15px !important;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    transform: translate(0px, 0px);
+}
+
+#js-lateral {
+    position: absolute;
+    font-style: italic;
+    transform: rotate(-90deg);
+    color: var(--white-color);
+    margin: 79vh 0 0 -53px;
+
+}
+
+#linha-diagonal1 {
+    border-right: 1px solid rgba(233, 230, 230, 0.3);
+    position: fixed;
+    transform: translate(59px, 0px) rotate(32deg);
+    height: 21px;
+    filter: blur(1px);
+    transition: opacity .2s ease-in-out;
+}
+
+#linha-diagonal2 {
+    border-right: 1px solid var(--grey-color);
+    position: fixed;
+    transform: translate(59px, 64px) rotate(44deg);
+    height: 19px;
+    transition: opacity .2s ease-in-out;
+}
+
+#particles-js {
+    display: flex;
+    position: relative;
+    height: 92.70vh;
+    width: 100%;
+}
+
+@supports (display: flex) {
+    @media(max-width: 900px) {
+        header {
+            margin-left: 40px;
+        }
+
+        #conteudo-centro {
+            margin: 0;
+            height: 95.70vh;
+            width: 99.5vw;
+        }
+
+        #linha-diagonal1 {
+            border-right: 1px solid rgba(233, 230, 230, 0.3);
+            position: fixed;
+            transform: translate(43px, -2px) rotate(32deg);
+            height: 16px;
+            filter: blur(1px);
+        }
+
+        #linha-diagonal2 {
+            border-right: 1px solid var(--grey-color);
+            position: fixed;
+            transform: translate(43px, 47px) rotate(44deg);
+            height: 13px;
+        }
+
+        .barra-esquerda {
+            height: 94.20vh;
+            width: 40px;
+            margin-top: 14px;
+        }
+
+        .quadrado-barra {
+            width: 50px;
+            height: 50px;
+        }
+
+        #js-lateral {
+            transform: rotate(-90deg) translate(0px, 8vw);
+            display: none;
+        }
+
+        #btn-language {
+            margin-left: 90px;
+            margin-top: 95.70vh;
+        }
+
+        #nome-text {
+            font-size: 30px;
+            transform: translate(39vw, 90px);
+            position: fixed;
+        }
+
+        #small-text {
+            font-size: 15px;
+        }
+
+        #bar {
+            transform: translate(-40px, 0px);
+        }
+
+        .asideShow {
+            scale: 0.8;
+        }
+
+        label {
+            margin-right: 10px !important;
+        }
+
+        .barra-esquerdaClicked {
+            width: 98vw;
+        }
+
+        .img-project {
+            scale: .8;
+        }
+        .infoClicked {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            overflow: auto;
+            scale: .9;
+            margin-right: 0;
+            padding: 10px;
+        }
+        .infoClicked::-webkit-scrollbar {
+            display: none;
+        }
+
+        .info .biografia {
+            position: absolute;
+            margin-top: 500px;
+            margin-left: 30px;
+            overflow: auto;
+        }
+
+        .info .biografia::-webkit-scrollbar {
+            display: none;
+        }
+
+        .info img {
+            scale: .8;
+            margin-left: 10px;
+        }
+        .info label a{
+            text-decoration: none;
+            color: var(--white-color);
+            transition: .5s;
+            margin-top: 10px;
+            padding: 10px 20px 20px 20px;
+            font-family: "Neue-Montreal";
+            letter-spacing: 1px;
+        }
+
+        .info label {
+            margin-left: 20px;
+        }
+        .info .apresentacao {
+            width: 100px;
+            margin-left: 200px;
+        }
+    }
+    @media(max-width: 450px) {
+        .infoClicked {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            overflow: auto;
+            scale: .8;
+            margin-right: 0;
+            padding: 10px;
+        }
+        .info img {
+            scale: .8;
+            margin-left: 10px;
+        }
+    }
+
+}
