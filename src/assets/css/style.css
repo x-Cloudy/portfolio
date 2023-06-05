@@ -1,11 +1,11 @@
 @keyframes animacao {
     from {
-        border-bottom: 0px solid var(--white-color);
+        border-bottom: 0px solid var(--black-color);
         width: 0%;
     }
 
     to {
-        border-bottom: 1px solid var(--white-color);
+        border-bottom: 1px solid var(--black-color);
         width: 100%;
     }
 }
@@ -47,9 +47,9 @@
 }
 
 body {
-    background-color: var(--black-color);
+    background-color: var(--white-color);
     font-family: 'Neue Montreal', sans-serif;
-    color: white;
+    color: black;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -60,7 +60,7 @@ header {
     top: 0;
     margin-top: 250px;
     margin-left: 80px;
-    color: var(--white-color);
+    color: var(--black-color);
     -webkit-user-select: none;
     user-select: none;
     position: fixed;
@@ -69,7 +69,7 @@ header {
 }
 
 aside {
-    color: white;
+    color: black;
     position: fixed;
     right: 0;
     transform: translate(-9vw, -510px) skew(0deg, 0deg);
@@ -83,13 +83,13 @@ aside {
     letter-spacing: 1px;
     backdrop-filter: blur(2px);
     display: none;
-    border-left: 1px solid var(--white-color);
+    border-left: 1px solid var(--black-color);
 
 }
 
 header button {
-    background-color: rgba(29, 29, 29, 0.1);
-    color: var(--white-color);
+    background-color: rgba(29, 29, 29, 0);
+    color: var(--black-color);
     border: none;
     font-family: 'Neue Montreal';
     font-size: 15px;
@@ -101,6 +101,7 @@ header button {
     cursor: pointer;
     transition: .4s;
     width: 10px;
+    border: 1px solid black;
 }
 
 header button:hover {
@@ -129,7 +130,8 @@ header button:active {
     position: fixed;
     display: flex;             
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(233, 230, 230, 0);
+    border: 1px solid var(--black-color);
     backdrop-filter: blur(3px) ;
     height: 600px;
     width: 650px;
@@ -171,11 +173,13 @@ header button:active {
     margin-top: 40px;
     margin-left: 60px;
     left: 0;
+    border-left: 1px solid var(--black-color);
+    border-top: 1px solid var(--black-color);
 }
 
 .info label a{
     text-decoration: none;
-    color: var(--white-color);
+    color: var(--black-color);
     transition: .5s;
     margin-top: 10px;
     padding: 10px 20px 20px 20px;
@@ -183,7 +187,7 @@ header button:active {
     letter-spacing: 1px;
 }
 .info label a:hover{
-    color:rgb(90, 90, 90);
+    color: white;
     transition: .5s;
 }
 
@@ -204,7 +208,6 @@ header button:active {
 
 .info img:hover {
     filter: saturate(100%);
-
 }
 
 .asideShow {
@@ -219,7 +222,7 @@ header button:active {
     position: absolute;
     top: 0;
     font-family: 'Neue-Montreal';
-    color: var(--white-color);
+    color: var(--black-color);
     font-size: 45px;
     transform: translate(260px, 80px);
     transition: opacity .5s;
@@ -228,15 +231,15 @@ header button:active {
 #small-text {
     font-size: 23px;
     font-style: italic;
-    color: rgba(233, 230, 230, 0.8);
+    color: rgba(17, 15, 15, 0.8);
 }
 
 #conteudo-centro {
-    background-color: var(--black-color);
+    background-color: var(--white-color);
     width: 95vw;
     height: 92.80vh;
     margin: 30px;
-    border: 1px solid var(--grey-color);
+    border: 1px solid var(--black-color);
     z-index: 1;
 }
 
@@ -249,25 +252,25 @@ header button:active {
 }
 
 .barra-esquerda {
-    border: 1px solid var(--grey-color);
+    border: 1px solid var(--black-color);
     width: 55px;
     margin-top: 20px;
     height: 91.59vh;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(194, 193, 193, 0.2);
     backdrop-filter: blur(2px);
     transition: .8s ease-in-out;
     z-index: 0;
 }
 
 .barra-esquerdaClicked {
-    border: 1px solid var(--grey-color);
+    border: 1px solid var(--black-color);
     width: 90vw;
     max-width: 1300px;
     margin-top: 20px;
     height: 91.59vh;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(194, 193, 193, 0.2);
     z-index: 0;
     backdrop-filter: blur(2px);
     display: flex;
@@ -298,7 +301,7 @@ header button:active {
 label {
     display: block;
     position: relative;
-    color: var(--white-color);
+    color: var(--black-color);
     backdrop-filter: blur(10px);
     font-family: "Neue-Montreal";
     width: 250px;
@@ -324,18 +327,18 @@ label img {
 }
 
 .quadrado-barra {
-    border: 1px solid var(--grey-color);
+    border: 1px solid var(--black-color);
     width: 68px;
     height: 68px;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(194, 193, 193, 0.2);
     z-index: 1;
     backdrop-filter: blur(1px);
     transition: .8s ease-in-out;
 }
 
 .quadrado-barraClicked {
-    border: 1px solid var(--grey-color);
+    border: 1px solid var(--black-color);
     width: 68px;
     height: 15px !important;
     position: fixed;
@@ -354,7 +357,7 @@ label img {
 }
 
 #linha-diagonal1 {
-    border-right: 1px solid rgba(233, 230, 230, 0.3);
+    border-right: 1px solid rgba(17, 17, 17, 0.6);
     position: fixed;
     transform: translate(59px, 0px) rotate(32deg);
     height: 21px;
@@ -363,7 +366,7 @@ label img {
 }
 
 #linha-diagonal2 {
-    border-right: 1px solid var(--grey-color);
+    border-right: 1px solid var(--black-color);
     position: fixed;
     transform: translate(59px, 64px) rotate(44deg);
     height: 19px;
